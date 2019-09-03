@@ -1,0 +1,24 @@
+:global{
+    .lesson-text{
+        .mshare-textarea-item{
+            padding-bottom:0;
+            .mshare-textarea-control{
+                padding-bottom: 22px;
+            }
+            .mshare-textarea-count{
+                bottom:3px;
+            }
+        }
+        .mshare-textarea-disabled{
+            color:rgba(0,0,0,.75)!important;
+            .mshare-textarea-control textarea:disabled{
+                color:rgba(0,0,0,.75)!important;
+            }
+        }
+        .detail-text-area{
+            .mshare-textarea-control{
+                color:rgba(0,0,0,.75);
+            }
+        }
+    }
+}

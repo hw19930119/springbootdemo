@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunsharing.springbootdemo.mappers.olreg.SelectOptionDtoOlregMapper">
+    <resultMap id="BaseResultMap" type="com.sunsharing.springbootdemo.model.dto.SelectOptionDto">
+        <result column="key" jdbcType="VARCHAR" property="key"/>
+        <result column="value" jdbcType="VARCHAR" property="value"/>
+    </resultMap>
+    <select id="subjectTypeOption" resultMap="BaseResultMap">
+      select
+        SUBJECT_ID key,
+        SUBJECT_NAME value
+      from T_LESSON_SUBJECT_TYPE t
+    </select>
+</mapper>

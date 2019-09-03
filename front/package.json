@@ -1,0 +1,29 @@
+{
+  "name": "sunsharing-mobile",
+  "version": "1.0.1",
+  "scripts": {
+    "start": "sharekit server",
+    "build": "sharekit build",
+    "build-analyze": "sharekit build --analyze",
+    "lint": "eslint --ext .js src > eslintErrorLog.txt"
+  },
+  "devDependencies": {
+    "@yo/babel-plugin-import": "^1.7.0",
+    "@yo/eslint-config-sunsharing": "^1.2.3",
+    "@yo/share-kit": "^0.13.0",
+    "babel-plugin-dva-hmr": "^0.3.2",
+    "redbox-react": "^1.5.0"
+  },
+  "dependencies": {
+    "@mshare/mshareui": "^1.4.2",
+    "@share/photoswipe": "1.4.1",
+    "classnames": "^2.2.5",
+    "dva": "2.1.0",
+    "jquery": "^3.4.1",
+    "nprogress": "^0.2.0",
+    "rc-form": "^2.1.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "store": "^2.0.12"
+  }
+}

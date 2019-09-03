@@ -1,0 +1,32 @@
+#是不是内网（服务端）（要改） true false both
+isInnerNetwork: false
+#业务项目名称，多处使用
+bizProjectName: edu2-hxg
+#jar包启动参数，war包不起作用
+server:
+  port: 8080
+  context-path: /springbootdemo
+  servlet:
+    session:
+      timeout: 120m
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+      force-response: true
+  messages:
+    encoding: UTF-8
+  profiles:
+    include: datasource,share-log,share-config,client,server,redis
+logging:
+  level:
+    root: INFO
+    com.sunsharing.springbootdemo.mappers: INFO
+    org.apache.ibatis: INFO
+    httpclient.wire: INFO
+    org.apache.commons.httpclient: INFO
+useRedis: false

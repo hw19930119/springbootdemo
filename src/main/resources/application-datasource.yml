@@ -1,0 +1,30 @@
+#服务端
+#数据源（要改）
+spring:
+  datasource:
+    jy:
+      url: jdbc:oracle:thin:@192.168.0.59:1521/cqdb
+      driverClassName: oracle.jdbc.driver.OracleDriver
+      username: air_jy
+      password: 123456
+      initialSize: 10
+      minIdle: 10
+      maxActive: 30
+      maxWait: 60000
+      validationQuery: 'SELECT 1 FROM DUAL'
+      testOnBorrow: false
+      testWhileIdle: true
+      poolPreparedStatements: false
+    olreg:
+      url: jdbc:oracle:thin:@192.168.0.59:1521/cqdb
+      driverClassName: oracle.jdbc.driver.OracleDriver
+      username: air_olreg
+      password: 123456
+      initialSize: 10
+      minIdle: 10
+      maxActive: 30
+      maxWait: 60000
+      validationQuery: 'SELECT 1 FROM DUAL'
+      testOnBorrow: false
+      testWhileIdle: true
+      poolPreparedStatements: false

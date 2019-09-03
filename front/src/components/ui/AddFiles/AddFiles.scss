@@ -1,0 +1,80 @@
+@import '../../../assets/sass/base';
+:global{
+    .all-files{
+        @include flex(row,space-betwwen,center);
+        padding:15px;
+        flex-wrap: wrap;
+        .file-item{
+           width:80px;
+            height:80px;
+            margin:5px 2px;
+                >div{
+                    width:100%;
+                    height:100%;
+                    position: relative;
+                    i{
+                       @include textCenter(20px,20px);
+                        position: absolute;
+                        top:-5px;
+                        right:-5px;
+                        z-index:1;
+                        color:$color-fff;
+                        background: rgba(0,0,0,.3);
+                        -webkit-border-radius: 50%;
+                        -moz-border-radius: 50%;
+                        border-radius: 50%;
+                    }
+                }
+            .img-item{
+                >img{
+                    width:100%;
+                    height:100%;
+                }
+
+            }
+            .paint-img{
+                background: url(../../../assets/images/paintBg2.png) no-repeat;
+                background-size:100% 100%;
+                >img{
+                    width:90%;
+                    height:85%;
+                    margin-top:18%;
+                    margin-left:5%;
+                }
+
+            }
+            .vedio-item,.audio-item{
+                background-size: cover;
+                @include flex(row,center,center);
+                >img{
+                    width:35px;
+                }
+            }
+            .vedio-item{
+                background: url("../../../assets/images/video.png") no-repeat;
+
+            }
+            .audio-item{
+                background: url("../../../assets/images/voice.png") no-repeat;
+                .music-btn{
+                    width:35px;
+                    height:35px;
+                    background: url("../../../assets/images/music-play-ico.png") no-repeat;
+                    background-size: cover;
+                }
+                .music-btn-pause{
+                    background: url("../../../assets/images/music-pause-ico.png") no-repeat;
+                    background-size: cover;
+                }
+            }
+            //.music-btn-pause{
+            //    background: url("../../../assets/images/music-pause-ico.png") no-repeat;
+            //    background-size: cover;
+            //}
+            .paint-item{
+                background: #000;
+            }
+        }
+    }
+
+}

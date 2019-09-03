@@ -1,0 +1,34 @@
+.error_display__container {
+    padding: 12px;
+    text-align: center;
+
+    .error_icon {
+        width: 80%;
+    }
+}
+
+.error_container {
+    h1 {
+        font-size: 18px;
+        font-family: sans-serif;
+        color: rgb(206, 17, 38);
+        white-space: pre-wrap;
+        padding: 6px;
+        flex: 0 0 auto;
+        max-height: 35%;
+        overflow: auto;
+    }
+
+    .error_stack__info {
+        padding: 6px;
+        font-size: 12px;
+        white-space: pre-wrap;
+        border-radius: 0.25rem;
+        background-color: rgba(206, 17, 38, 0.05);
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+}

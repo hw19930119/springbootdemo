@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunsharing.springbootdemo.mappers.jy.SelectOptionDtoJyMapper">
+    <resultMap id="BaseResultMap" type="com.sunsharing.springbootdemo.model.dto.SelectOptionDto">
+        <result column="key" jdbcType="VARCHAR" property="key"/>
+        <result column="value" jdbcType="VARCHAR" property="value"/>
+    </resultMap>
+
+    <select id="schoolOption" resultMap="BaseResultMap">
+      select
+        SCHOOL_ID key,
+        SCHOOL_NAME value
+      from T_JY_SCHOOL SC
+      WHERE SC.IS_FLAG = '0'
+    </select>
+    <select id="teacherOption" resultMap="BaseResultMap">
+        select
+        TEACHE_ID key,
+        TEACHE_NAME value
+        from T_JY_TEACHER t
+        <where>
+            t.IS_FLAG = '0'
+            <if test="schoolId != null">
+                AND t.school_id = #{schoolId}
+            </if>
+        </where>
+
+    </select>
+</mapper>

@@ -1,0 +1,35 @@
+/*!
+ * @(#) Prevent.scss
+ * 版权声明 厦门畅享信息技术有限公司, 版权所有 违者必究
+ *
+ * <br> Copyright:  Copyright (c) 2019
+ * <br> Company:厦门畅享信息技术有限公司
+ * <br> @author lihui
+ * <br> 2019-08-06 17:05:15
+ */
+:global{
+    .box{
+        overflow: hidden;
+        .boximg{
+            width:50px;
+            height:50px;
+            margin: auto;
+            border:5px solid #F26612;
+            border-radius: 50%;
+            font-size: 40px;
+            text-align: center;
+            line-height:50px;
+            color: #F26612;
+            margin-top: 200px;
+        }
+        .boxtext{
+            text-align: center;
+            margin-top: 15px;
+        }
+        .boxtextqy{
+            text-align: center;
+            margin-top: 15px;
+        }
+    }
+}
+

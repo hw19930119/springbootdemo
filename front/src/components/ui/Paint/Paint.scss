@@ -1,0 +1,79 @@
+@import '../../../assets/sass/base';
+:global{
+    .paint-box{
+        position:fixed;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        background: $color-fff;
+        z-index:999;
+        .canvas-box{
+            width:100%;
+            height:92%;
+            background: url('../../../assets/images/paintBg2.png') no-repeat;
+            background-size:100% 100%;
+            overflow: hidden;
+            //padding:10% 5%;
+            .canvas{
+                width:90%;
+                height:85%;
+                margin-top:18%;
+                margin-left:5%;
+                //position: relative;
+                //top: 10%;
+                //left: 5%;
+                //background: #000;
+            }
+        }
+
+        .color-table{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            z-index:9;
+            border:none;
+            background: $color-fff;
+            .tr{
+                .td{
+                    width:20px;
+                    height:20px;
+                }
+            }
+        }
+        .all-btns{
+            @include flex(row,center,center);
+            width:100%;
+            height:8%;
+            >li{
+                //padding:10px 5px;
+                width:20%;
+                height:100%;
+                text-align: center;
+                color:$color-fff;
+                background: $color-default;
+                border-right:1px solid $color-fff;
+                @include flex(row,center,center);
+                &.four-cli{
+                    width:25%;
+                }
+            }
+            >li:nth-last-of-type(1){
+                border-right:none;
+            }
+        }
+        .close-btn{
+            position:absolute;
+            right:25px;
+            top:4%;
+            @include textCenter(25px,25px);
+            color:$color-fff;
+            font-size: $font-size-medium;
+            z-index:8;
+            background: rgba(0,0,0,.4);
+            font-weight: bold;
+            border-radius: 50%;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+spring:
+  redis:
+    ##默认redis客户端连接为0 可修改
+    database: 5
+    host: 192.168.0.50
+    port: 6379
+    cache_name: XiChuanRedis
+    password:
+    pool:
+      ##连接池最大空闲连接
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: 1
+      max-total: 8
+    timeout: 5000

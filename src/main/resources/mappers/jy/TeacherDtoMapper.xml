@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunsharing.springbootdemo.mappers.jy.TeacherDtoMapper">
+    <resultMap id="BaseResultMap" type="com.sunsharing.springbootdemo.model.dto.TeacherDto">
+        <id column="TEACHE_ID" jdbcType="VARCHAR" property="teacheId"/>
+        <result column="SCHOOL_ID" jdbcType="VARCHAR" property="schoolId"/>
+        <result column="PHONE" jdbcType="VARCHAR" property="phone"/>
+        <result column="ID_CARD" jdbcType="VARCHAR" property="idCard"/>
+        <result column="TEACHE_NAME" jdbcType="VARCHAR" property="teacheName"/>
+        <result column="SEX" jdbcType="CHAR" property="sex"/>
+        <result column="BIRTH_DATE" jdbcType="VARCHAR" property="birthDate"/>
+        <result column="NATION" jdbcType="VARCHAR" property="nation"/>
+        <result column="JOB" jdbcType="VARCHAR" property="job"/>
+        <result column="RANK" jdbcType="VARCHAR" property="rank"/>
+        <result column="IS_COMPILE" jdbcType="CHAR" property="isCompile"/>
+        <result column="CONTENT" jdbcType="VARCHAR" property="content"/>
+        <result column="START_TIME" jdbcType="VARCHAR" property="startTime"/>
+        <result column="END_TIME" jdbcType="VARCHAR" property="endTime"/>
+        <result column="STATE" jdbcType="CHAR" property="state"/>
+        <result column="IS_PARTY" jdbcType="CHAR" property="isParty"/>
+        <result column="PARTY_TIME" jdbcType="VARCHAR" property="partyTime"/>
+        <result column="EDUCATION" jdbcType="VARCHAR" property="education"/>
+        <result column="MAJOR" jdbcType="VARCHAR" property="major"/>
+        <result column="CREATE_TIME" jdbcType="VARCHAR" property="createTime"/>
+        <result column="UPDATE_TIME" jdbcType="VARCHAR" property="updateTime"/>
+        <result column="UPDATE_PESON" jdbcType="VARCHAR" property="updatePeson"/>
+        <result column="IS_FLAG" jdbcType="CHAR" property="isFlag"/>
+        <result column="CAUSE" jdbcType="VARCHAR" property="cause"/>
+        <result column="WX_USERID" jdbcType="VARCHAR" property="wxUserid"/>
+        <result column="CREATE_PESON" jdbcType="VARCHAR" property="createPeson"/>
+        <result column="TEACHE_LABEL" jdbcType="VARCHAR" property="teacheLabel"/>
+        <result column="IS_WXSMS" jdbcType="CHAR" property="isWxsms"/>
+        <result column="LOGIN_NAME" jdbcType="VARCHAR" property="loginName"/>
+        <result column="LOGIN_PWD" jdbcType="VARCHAR" property="loginPwd"/>
+        <result column="COURSE" jdbcType="VARCHAR" property="course"/>
+        <result column="HEAD_IMG" jdbcType="VARCHAR" property="headImg"/>
+        <result column="SCHOOL_ZONE_ID" jdbcType="VARCHAR" property="schoolZoneId"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+    TEACHE_ID, SCHOOL_ID, PHONE, ID_CARD, TEACHE_NAME, SEX, BIRTH_DATE, NATION, JOB, 
+    RANK, IS_COMPILE, CONTENT, START_TIME, END_TIME, STATE, IS_PARTY, PARTY_TIME, EDUCATION, 
+    MAJOR, CREATE_TIME, UPDATE_TIME, UPDATE_PESON, IS_FLAG, CAUSE, WX_USERID, CREATE_PESON, 
+    TEACHE_LABEL, IS_WXSMS, LOGIN_NAME, LOGIN_PWD, COURSE, HEAD_IMG, SCHOOL_ZONE_ID
+  </sql>
+    <select id="selectByExample" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from T_JY_TEACHER t
+        where rownum <![CDATA[ <= ]]> 10
+        AND t.IS_FLAG = '0'
+    </select>
+
+    <select id="queryByWxUserId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from T_JY_TEACHER t
+        where WX_USERID=#{wxUserId}
+        AND t.IS_FLAG = '0'
+    </select>
+    <select id="getTeacherByTeacherId" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from T_JY_TEACHER t
+        where TEACHE_ID=#{teacherId}
+        AND t.IS_FLAG = '0'
+    </select>
+</mapper>

@@ -1,0 +1,57 @@
+@import '../../../assets/sass/base';
+:global{
+    .add-element{
+        position: fixed;
+        right:15px;
+        bottom:120px;
+        .all-element{
+            >li{
+                width:42px;
+                height:42px;
+                border-radius: 50%;
+                margin-bottom:3px;
+                position: relative;
+                &:nth-of-type(1){
+                    background: url('../../../assets/images/btn_img.png');
+                    background-size: 100% 100%;
+                }
+                &:nth-of-type(3){
+                    background: url('../../../assets/images/btn_video.png');
+                    background-size: 100% 100%;
+                }
+                img{
+                    width:100%;
+                }
+                input{
+                    //position: absolute;
+                    //top: 2px;
+                    //left: 2px;
+                    opacity: 0;
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50%;
+                    //z-index:9;
+                }
+                &.add-close-btn{
+                    background: $color-default;
+                    color:$color-fff;
+                    font-size: $font-size-20;
+                    text-align: center;
+                    line-height: 42px;
+                    &.active{
+                        background: rgba(0,0,0,.3);
+                    }
+                }
+            }
+
+        }
+        .add-file-btn{
+            @include textCenter(42px,42px);
+            border-radius: 50%;
+            background: $color-default;
+            color:$color-fff;
+            font-size: $font-size-28;
+
+        }
+    }
+}

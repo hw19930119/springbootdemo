@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="jquery-1.9.1.js"> </script>
+    <title>去微信登录</title>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+
+<div class="load-div">
+    <h2>正在获取授权,请稍候.....</h2>
+</div>
+</body>
+</html>
+<script>
+    setTimeout('getWeixinCodeConfigAndGoredirect()',400);
+    //先拿配置再去微信授权
+    function getWeixinCodeConfigAndGoredirect() {
+        $.ajax({
+               url: "user/getWeixinCodeConfig",
+               type: "get",
+               data: {
+               },
+               dataType: "json",
+               success: function (responseJsonStr) {
+                   if(!commomCheckLogin(responseJsonStr)){
+                       return false;
+                   }
+                   goredirect(responseJsonStr.data.CorpID);//去微信授权
+               },
+               error: function (error) {
+                   document.write("登录失败");
+               }
+           });
+    }
+    //应用后台通用结果处理
+    function commomCheckLogin(responseJsonStr){
+        if(responseJsonStr.status==1403){
+            document.write(responseJsonStr.message);
+            return false;
+        }else{
+            return true;
+        }
+    }
+    //去微信授权
+    function goredirect(weixinAppId){
+        var h = window.location.href.split("/beforeLoginWeixin.html")[0];
+        var redirect_uri = encodeURI(h + '/afterLoginWeixin.html');
+        //appid 为公众号的appid
+        var getCodeUrl = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid='
+                         + weixinAppId
+                         + '&redirect_uri='+redirect_uri+'&response_type=code&scope=snsapi_base&state=#wechat_redirect';
+        window.location.href = getCodeUrl;
+    }
+
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>index</title>
+    <script src="jquery-1.9.1.js"> </script>
+    <style type="text/css">
+    </style>
+</head>
+<body>
+index
+</body>
+<script>
+    setTimeout('test()',400);
+    function test(){
+        $.ajax({
+                   url: "select-option/school-option",
+                   type: "get",
+                   data: {
+                   },
+                   dataType: "json",
+                   success: function (responseJsonStr) {
+                       if(!commomCheckLogin(responseJsonStr)){
+                           return false;
+                       }
+                       document.write(JSON.stringify(responseJsonStr) );
+                   },
+                   error: function (error) {
+                       document.write(" 登录失败");
+                   }
+               });
+    }
+    //应用后台通用结果处理
+    function commomCheckLogin(responseJsonStr){
+        if(responseJsonStr.status==1403||responseJsonStr.status==1401){
+            document.write(responseJsonStr.message);
+            return false;
+        }else{
+            return true;
+        }
+    }
+</script>
+</html>

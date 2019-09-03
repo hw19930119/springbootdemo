@@ -1,0 +1,90 @@
+/*!
+ * @(#) Recordlist.scss
+ * 版权声明 厦门畅享信息技术有限公司, 版权所有 违者必究
+ *
+ * <br> Copyright:  Copyright (c) 2019
+ * <br> Company:厦门畅享信息技术有限公司
+ * <br> @author lihui
+ * <br> 2019-07-19 15:03:59
+ */
+@import "../../../assets/sass/base";
+:global{
+    .recordlist-after{
+        width:100%;
+        .rl-box{
+            width:100%;
+            position: relative;
+            .sign-icon{
+                width:16px;
+                height:16px;
+                border-radius:50%;
+                position: absolute;
+                top:12px;
+                left:23px;
+                z-index: 4;
+                &.rl-signOne{
+                    background: #7F7F7F;
+                }
+                &.rl-signTwo{
+                    background: #FFA940;
+                }
+            }
+        }
+        .rl-index{
+            //width:75%;
+            background: #ffffff;
+            border-radius:4px;
+            margin: 12px 20px 0 50px;
+            border: 1px solid #ededed;
+            padding: 0 15px;
+            .rl-name{
+                padding: 10px 0;
+                margin:auto;
+                border-bottom:1px solid #ededed;
+            }
+            .rl-people{
+                margin:auto;
+                box-sizing: border-box;
+                padding:10px 0 10px 10px;
+                span:nth-child(1){
+                    color: #A4A4A4;
+                }
+                .rl-draft{
+                    color: #FF561B;
+                    padding-right: 10px;
+                    float: right;
+                }
+            }
+            .rl-time{
+                margin:auto;
+                box-sizing: border-box;
+                padding: 0 0 10px 10px;
+                border-bottom: 1px solid #ededed;
+                span{
+                    color: #A4A4A4;
+                }
+            }
+            .rl-button{
+                margin:auto;
+                height: 30px;
+                .rl-icon{
+                    line-height: 30px;
+                    color: #0199DE;
+                    i{
+                        position: relative;
+                        top:7px;
+                    }
+                }
+                button{
+                    display: inline-block;
+                    outline:none;
+                    background: #ffffff;
+                    border:none;
+                    color: #0199DE;
+                    font-size: 14px;
+                    padding-left: 2px;
+                }
+            }
+        }
+    }
+}

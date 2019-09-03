@@ -1,0 +1,29 @@
+@import '../../../assets/sass/base';
+:global{
+    .audio-box{
+        width:100%;
+        position: fixed;
+        top:44px;
+        left:0;
+        padding:10px 15px;
+        color:$color-fff;
+        background: $color-orange;
+        //@include flex(row,space-between,center);
+        box-sizing: border-box;
+        z-index:99;
+        >div{
+            span:nth-of-type(1){
+                margin-right:15px;
+            }
+        }
+        .left{
+            float:left;
+            span:nth-of-type(1){
+                margin-right:2px;
+            }
+        }
+        .right{
+            float:right;
+        }
+    }
+}

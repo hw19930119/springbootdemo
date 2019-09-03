@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name = "format-detection" content = "telephone=no">
+  <link rel="shortcut icon" href="/favicon.ico" >
+  <title>我的听课本</title>
+  <style>
+    #root{
+      width:100%;
+      height:100%;
+    }
+    .boxLoading{
+      width:100%;
+      height:100%;
+      background: #FFFFFF;
+    }
+    .loading-img{
+      display: block;
+      margin: auto;
+      margin-top: 100px;
+    }
+    .loading_tip{
+      text-align: center;
+      color: #AEAEAE;
+    }
+    .loading_mid{
+      text-align: center;
+      padding:10px 0;
+    }
+    @-webkit-keyframes bs {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 20px 0 #1affff;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+    }
+    @-moz-keyframes bs {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 20px 0 #1affff;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+    }
+    @-o-keyframes bs {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 20px 0 #1affff;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+    }
+    @keyframes bs {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 20px 0 #1affff;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 0px 0 #b2ff1a;
+      }
+    }
+    @-webkit-keyframes bs2-in {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 10px 0 #bbff33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+    }
+    @-moz-keyframes bs2-in {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 10px 0 #bbff33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+    }
+    @-o-keyframes bs2-in {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 10px 0 #bbff33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+    }
+    @keyframes bs2-in {
+      0% {
+        box-shadow: inset -1px 1px 3px 2px rgba(255,255,255,.3), inset 1px -1px 3px 2px rgba(255,255,255,.5), 0 0 10px 0 #bbff33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+    }
+    @-webkit-keyframes bs2 {
+      0% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 10px 0 #ffbb33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+    }
+    @-moz-keyframes bs2 {
+      0% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 10px 0 #ffbb33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+    }
+    @-o-keyframes bs2 {
+      0% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 10px 0 #ffbb33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255,255,255,.3), inset 1px -1px 5px 2px rgba(255,255,255,.5), 0 0 0px 0 #ff3333;
+      }
+    }
+    @keyframes bs2 {
+      0% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255, 255, 255, .3), inset 1px -1px 5px 2px rgba(255, 255, 255, .5), 0 0 0px 0 #ff3333;
+      }
+
+      50% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255, 255, 255, .3), inset 1px -1px 5px 2px rgba(255, 255, 255, .5), 0 0 10px 0 #ffbb33;
+      }
+
+      100% {
+        box-shadow: inset -1px 1px 5px 2px rgba(255, 255, 255, .3), inset 1px -1px 5px 2px rgba(255, 255, 255, .5), 0 0 0px 0 #ff3333;
+      }
+    }
+  </style>
+</head>
+<body>
+<div id="root">
+  <div class="boxLoading">
+    <img class="loading-img" src="./onload.jpg"/>
+    <p class="loading_mid">加载中...</p>
+    <p class="loading_tip">您好！页面正在加载中，请稍后</p>
+  </div>
+</div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+</body>
+</html>

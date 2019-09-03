@@ -1,0 +1,41 @@
+/*
+ * @(#) SchoolItem.scss
+ * 版权声明 厦门畅享信息技术有限公司, 版权所有 违者必究
+ *
+ * <br> Copyright:  Copyright (c) 2019
+ * <br> Company:厦门畅享信息技术有限公司
+ * <br> @author liuxia
+ * <br> 2019/7/23 19:19
+ */
+:global{
+    .school-con{
+        position: relative;
+        .school-con-hide{
+            position: absolute;
+            width: 75%;
+            max-height: 200px;
+            //padding: 0 10px;
+            overflow-y: auto;
+            border: 1px solid rgba(217,217,217,.4);
+            background: #fff;
+            right: 0;
+            top:44px;
+            z-index: 99;
+            ul{
+                li{
+                    height: 35px;
+                    line-height: 35px;
+                    text-indent: 15px;
+                    border-bottom: 1px solid rgba(217,217,217,.3);
+                    cursor: pointer;
+                    &:hover,&:active{
+                        background: #ccc;
+                    }
+                }
+            }
+        }
+        .hide{
+            display: none;
+        }
+    }
+}

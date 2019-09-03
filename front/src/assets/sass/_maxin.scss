@@ -1,0 +1,41 @@
+// 绝对居中
+@mixin size($width,$height) {
+    width:$width;
+    height:$height;
+}
+@mixin flex($way,$justify,$align){
+
+    display: flex;
+    flex-direction: $way;
+    -ms-flex-direction: $way;
+    align-items: $align;
+    -ms-flex-align: center;
+    justify-content: $justify;
+}
+@mixin center($width, $height) {
+    position: absolute;
+    left:50%;
+    top:50%;
+    width:$width;
+    height:$height;
+    margin:(-$height / 2) 0 0 (-$width / 2);
+}
+// 设置动画名称
+@mixin animation($aniName) {
+    -webkit-animation:$aniName;
+    -moz-animation:$aniName;
+    -o-animation:$aniName;
+    animation:$aniName;
+}
+@mixin fixed($top,$left){
+    position: fixed;
+    top:$top;
+    left:$left;
+    width:100%;
+}
+@mixin textCenter($width,$height){
+    width:$width;
+    height:$height;
+    text-align: center;
+    line-height: $height;
+}

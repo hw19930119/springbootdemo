@@ -1,0 +1,46 @@
+@import '../../../../assets/sass/variables';
+:global{
+    .mshare-list-body div:not(:last-child) .mshare-list-line{
+        &:after{
+            height:2px !important;
+        }
+    }
+    .select-school{
+        .mshare-list-header{
+            font-size: $font-size-18;
+            padding:15px;
+        }
+        .mshare-list-body{
+           padding:15px;
+            &:after{
+                display: none !important;
+            }
+            .mshare-list-item{
+                padding-left: 0px;
+            }
+            .mshare-list-line{
+                &:after{
+                    content: '';
+                    position: absolute;
+                    background-color: #d9d9d9;
+                    display: block;
+                    z-index: 1;
+                    top: auto;
+                    right: auto;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 1px;
+                }
+            }
+        }
+        text-align: center;
+        .bottom-btn{
+            width:50%;
+            margin:20px auto;
+            .mshare-button{
+                width:100%;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+#客户端（要改）
+share:
+  config:
+    remote_url: http://localhost:8085/springbootdemo/services/openServiceCollagen
+    #service服务调用类型 spring 本地调用 webService 远程调用 collagen 协同平台
+    proxyType: webService
+    openServiceId:
+    openAuthorizeId:
+    collagenIp:
+    collagenPort:
+    collagenRequestId:
+    collagenLocalDomain:
+    collagenWsProxyFlowId:
+    #单位为秒
+    collagenRequestTimeOut: 30

@@ -1,0 +1,190 @@
+@import '../../../../assets/sass/base';
+:global{
+    .my-lesson-page{
+        .out-tab{
+            >div>.mshare-tabs-tab-bar-wrap{
+                position: fixed;
+                top:0;
+                left:0;
+                width:100%;
+                z-index:9;
+
+            }
+            .tab-content{
+
+                //padding:50px 15px 50px;
+                padding:43px 0 68px 0;
+                position: relative;
+                //padding-top: 43.5px;
+                .mshare-tabs-tab-bar-wrap{
+                    position: absolute;
+                    top:0;
+                    left:0;
+                    width:100%;
+                    //z-index:9;
+                }
+                .mshare-list{
+                    .mshare-list-header{
+                        padding:10px 15px;
+                    }
+                    &.no-text-list{
+                        .mshare-list-header{
+                            padding:5px 15px;
+                        }
+
+                    }
+                }
+                .mshare-textarea-control {
+                    textarea{
+                        width:100%;
+                        word-wrap:break-word;
+                        word-break:break-all;
+                        overflow-y: auto;
+                        &::-webkit-scrollbar{
+                            display: none;
+                        }
+                    }
+                }
+                .lesson-text{
+                    .mshare-textarea-control{
+                        min-height: 100px;
+                        textarea{
+                            min-height: 100px;
+                        }
+
+                    }
+                    &:nth-of-type(1){
+                        .mshare-textarea-control{
+                            min-height: 400px;
+                            textarea{
+                                min-height: 400px;
+                            }
+
+                        }
+                    }
+                }
+                //.add-scan{
+                //    position: absolute;
+                //    top:55px;
+                //    left:80%;
+                //    z-index: 100000;
+                //    color: #0099DD;
+                //}
+            }
+            .class-records{
+                position: relative;
+                padding-bottom:116px;
+                .mshare-tabs-default-bar{
+                    padding-right:50px;
+                    .mshare-tabs-default-bar-tab{
+                        width:70px!important;
+                        border:$border-color;
+                        font-size: $font-size-medium;
+                        height:25px;
+                        line-height: 25px;
+                        margin:15px 0 10px 15px;
+                        border-radius: 5px;
+                    }
+                    .mshare-tabs-default-bar-tab-active{
+                        border:1px solid $color-default;
+                    }
+                    .mshare-tabs-default-bar-underline{
+                        border:none
+                    }
+                }
+                .tab-content{
+                    padding-top:50px;
+                    padding-bottom: 10px;
+
+                }
+                .add-stage-btn {
+                    position: absolute;
+                    right: 10px;
+                    top: 55px;
+                    z-index: 9;
+                    font-size: $font-size-24;
+                    color: $color-fff;
+                    border-radius: 50%;
+                    background: $color-add-tab;
+                    @include textCenter(26px, 26px);
+                }
+                .delete-state-box{
+                    position: absolute;
+                    bottom:68px;
+                    left:0;
+                    width:100%;
+                    background: $list-bg;
+                    //padding:10px 0;
+                    .delete-state-btn{
+                        padding:10px;
+                        @include flex(row,center,center);
+                        color: $color-default;
+                        background: $color-fff;
+                        i{
+                            font-size: $font-size-20;
+                            margin-right:10px;
+                        }
+                    }
+                    .mshare-button-disabled{
+                        color:$color-add-tab;
+                    }
+                }
+                &.detail{
+                    padding-bottom:60px;
+                }
+            }
+        }
+
+        .bottom-btns{
+            box-sizing: border-box;
+            background:$list-bg ;
+            padding:10px 15px;
+            position: fixed;
+            bottom:0;
+            left:0;
+            width:100%;
+            @include flex(row,center,center);
+            .mshare-button{
+                width: 46%;
+                margin-left: 20px;
+                &:first-child{
+                    margin-left: 0;
+                }
+            }
+
+        }
+    }
+    .detail-page{
+        .lesson-text{
+            .mshare-textarea-control{
+                textarea{
+                    color:rgba(0,0,0,.75);
+                }
+            }
+        }
+    }
+    //.pswp__caption__center{
+    //    display: none;
+    //}
+    .pswp--supports-fs .pswp__button--fs{
+        display: none;
+    }
+    .paint-img{
+        .pswp img{
+            background: url('../../../../assets/images/paintBg2.png') no-repeat;
+            background-size: 100% 100%;
+            padding:18% 5% 5% 5%;
+        }
+        //.pswp__zoom-wrap{
+        //    background: url('../../../../assets/images/paintBg.png') no-repeat;
+        //    background-size: 100% 100%;
+        //    .pswp__img{
+        //        width:90%;
+        //        height:80%;
+        //        margin-top:19%;
+        //        margin-left:5%;
+        //    }
+        //}
+    }
+
+}

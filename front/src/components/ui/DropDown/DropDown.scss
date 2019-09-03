@@ -1,0 +1,69 @@
+/*!
+ * @(#) dropdown.scss
+ * 版权声明 厦门畅享信息技术有限公司, 版权所有 违者必究
+ *
+ * <br> Copyright:  Copyright (c) 2019
+ * <br> Company:厦门畅享信息技术有限公司
+ * <br> @author lihui
+ * <br> 2019-07-19 14:28:36
+ */
+:global{
+    .dropdown-con{
+        position: relative;
+        .mid-wire{
+            position: absolute;
+            left: 30px;
+            background: #D9D9D9;
+            width:1px;
+            height:100%;
+            z-index: 2;
+        }
+    }
+    .mshare-accordion{
+        position: relative;
+        background: #F5F5F5;
+        &:before{
+            display: none !important;
+        }
+
+        .mshare-accordion-header::after{
+            display: none !important;
+        }
+        .mshare-accordion-item{
+            .mshare-accordion-header{
+                margin-bottom: 20px;
+                border-bottom: 1px solid #DFDFDF !important;
+                border-top: 1px solid #DFDFDF !important;
+                height: 34px;
+                line-height: 34px;
+                position: relative;
+                z-index: 3;
+                i{
+                    background-image: url("../../../assets/images/dowmUp.png");
+                }
+                .arrow{
+                    top:8px;
+                }
+            }
+            .mshare-accordion-content{
+                background: #F5F5F5 !important;
+                margin-bottom: 10px;
+                .mshare-accordion-content-box{
+                    &:after{
+                        display: none !important;
+                    }
+                    .mshare-list-body{
+                        &:after{
+                            display: none !important;
+                        }
+                        .recordlist-after{
+                            background: #F5F5F5 !important;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+

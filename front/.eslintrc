@@ -1,0 +1,6 @@
+{
+  "extends": "@yo/eslint-config-sunsharing/react",
+  "globals": {
+    "dispatch": true
+  }
+}

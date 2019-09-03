@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+    <Properties>
+        <!-- TODO 请修改 appId 配置 -->
+        <Property name="appId" value="springbootdemo"/>
+        <!-- TODO 请修改 moduleId 配置 -->
+        <Property name="moduleId" value="log4j2"/>
+        <Property name="logDir" value="/opt/log"/>
+    </Properties>
+</Configuration>
